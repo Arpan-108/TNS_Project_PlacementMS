@@ -1,16 +1,12 @@
 package com.spring.lotus.entity;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
 
 @Entity
 //@Table(name = "Colleges")
@@ -19,13 +15,12 @@ public class College {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long college_id;
-	String college_name;
-	String location;
+	private String college_name;
+	private String location;
 	
 	@OneToOne
 	@Autowired
-//	@ManyToOne
-	User college_admin;
+	private User college_admin;
 
 	public College() {
 		super();
