@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -14,7 +15,7 @@ public class Certificate {
 	private long certificateId;
 	private int yearOfGraduation;
 	
-	@OneToMany
+	@ManyToOne
 	@Autowired
 	private College college;
 

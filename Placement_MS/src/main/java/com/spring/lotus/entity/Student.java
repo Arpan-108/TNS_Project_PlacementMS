@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
@@ -12,6 +13,7 @@ public class Student {
 	
 	@Id
 	private long studentId;
+	
 	private String studentName;
 	private Long rollNo;
 	private String qualification;
@@ -19,7 +21,7 @@ public class Student {
 	private int year;
 	private long hallTicketNo;
 	
-	@OneToMany
+	@ManyToOne
 	@Autowired
 	private College college;
 	
